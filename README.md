@@ -1,46 +1,64 @@
-# Bacterial Morphology Classification 
+# Bacterial Morphology Classification — Image-Based ML Pipeline
 
-Link to dataset: https://drive.google.com/drive/folders/1dN3EfDDlfjZP1Yw1RlsErZtNaKafpt-7?usp=sharing 
+This project focuses on classifying bacterial morphology from microscope images into three categories: cocci, bacilli, and spirilla. The goal is to demonstrate an end-to-end machine learning workflow, from data collection and preprocessing to model training, evaluation, and deployment.
 
-Dataset Format:
+The final model is deployed and shared via Hugging Face, enabling reproducible evaluation and interactive use.
 
-The dataset includes 600 images of bacteria seen under different types of microscope. 
+Dataset Overview:
 
-The 600 images are divided into three classifications as follows:
-200 images of cocci bacteria
-200 images of bacilli bacteria
-200 images of spirilla bacteria
+Total images: 600
 
-The images will be labeled as either "cocci", "bacilli", or "spirilla".
+Classes:
 
-Data Extraction:
+Cocci (200 images)
 
-Downloaded images of bacteria seen under the microscope using the python library "bing-image-downloader" which downloads a bulk of images from Bing. 
+Bacilli (200 images)
 
-The code was written on Google Colab as follows:
+Spirilla (200 images)
 
-#Install the bing-image-downloader library.
+Image source: Microscope images collected from web search results
 
-!pip install bing-image-downloader 
+Labels: cocci, bacilli, spirilla
 
-#Download the images in the folder named "images".
+🔗 Dataset link:
+https://drive.google.com/drive/folders/1dN3EfDDlfjZP1Yw1RlsErZtNaKafpt-7
 
-!mkdir images 
+Data Collection & Labeling:
 
-#Replace "cocci_under_microscope" with other bacteria names to download the desired images (e.g. "bacilli_under_microscope", "spirilla_under_microscope", "campylobacter_jejuni_under_microscope", "diplococcus_electron_micrograph", "staphylococcus_electron_micrograph"...).
+Images were collected using automated web scraping tools and manually curated to ensure relevance and quality. Each image was reviewed and labeled based on bacterial shape, a process designed to be fast and consistent given the clear morphological distinctions between classes.
 
-#Set the limit for images download (e.g. limit=50 means that it will download a maximum of 50 images).
+Collection period: September 28, 2024 – October 1, 2024
 
-From bing_image_downloader import downloader
-downloader.download("cocci_under_microscope", limit=50, output_dir='images', adult_filter_off=True, force_replace=False, timeout=60) 
+Labeling approach: Manual labeling based on visual morphology
 
-Lastly, check the images under the "images" folder and download the best images on your desktop. Organize all the datapoints in a folder and upload it to Google Drive.
+Modeling Approach:
 
-Expected timeframe for labeling the data:
+Used a convolutional neural network with MobileNetV2 as a feature extractor
 
-It should take approximately 5 seconds to label each datapoint. 
-The labeler will only need to distinguish between 3 shapes of bacteria.
+Applied transfer learning to improve performance on a limited dataset
 
-Data Collection Date:
+Evaluated model performance using accuracy and F1 score
 
-The data was collected from September 28, 2024 till October 1, 2024.
+Achieved 0.85 accuracy and F1 score on the test set
+
+Tools & Technologies:
+
+Python | TensorFlow / Keras | Pandas, NumPy | Google Colab | Hugging Face (model deployment & sharing)
+
+Deployment:
+
+The trained model is deployed on Hugging Face Spaces, allowing users to upload microscope images and receive predicted bacterial morphology in real time.
+
+This deployment emphasizes reproducibility, accessibility, and practical usability beyond local experimentation.
+
+Key Takeaways:
+
+Demonstrated a complete ML pipeline from raw data collection to deployment
+
+Gained experience applying transfer learning for image classification
+
+Highlighted the importance of data quality, evaluation metrics, and model generalization
+
+Notes:
+
+This project is intended for educational and experimental purposes and focuses on applied machine learning practices rather than clinical diagnosis.
