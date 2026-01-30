@@ -1,5 +1,4 @@
-# BMC
-Bacterial Morphology Classification - Yola Charara
+# Bacterial Morphology Classification 
 
 Link to dataset: https://drive.google.com/drive/folders/1dN3EfDDlfjZP1Yw1RlsErZtNaKafpt-7?usp=sharing 
 
