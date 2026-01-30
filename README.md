@@ -20,8 +20,7 @@ Image source: Microscope images collected from web search results
 
 Labels: cocci, bacilli, spirilla
 
-🔗 Dataset link:
-https://drive.google.com/drive/folders/1dN3EfDDlfjZP1Yw1RlsErZtNaKafpt-7
+Dataset link: https://drive.google.com/drive/folders/1dN3EfDDlfjZP1Yw1RlsErZtNaKafpt-7
 
 Data Collection & Labeling:
 
